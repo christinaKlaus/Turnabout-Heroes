@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	[SerializeField] float minDistance = 1f;
 	[SerializeField] GameObject red;
 	[SerializeField] GameObject blue; 
+   
     void Update()
     {
        if(Input.GetButton("TurnLeft")){
@@ -21,8 +22,8 @@ public class PlayerController : MonoBehaviour {
 		   transform.Rotate(new Vector3(0, rotationAmount, 0));
 	   }
 
-	   if(Input.GetButton("DistanceIncrease") && red.transform.position.x <= maxDistance/2){
-		   Debug.Log("DistanceIncrease");
+/*	   if(Input.GetButton("DistanceIncrease") && red.transform.position.x <= maxDistance/2){
+		   Debug.Log("Distance Decrese");
 		   red.transform.position = new Vector3(red.transform.position.x + distanceAmount/2, 0, 0);	   
 	   	   blue.transform.position = new Vector3(blue.transform.position.x - distanceAmount/2, 0, 0);
 	   }
@@ -32,6 +33,6 @@ public class PlayerController : MonoBehaviour {
 		   red.transform.position = new Vector3(red.transform.position.x - distanceAmount/2, 0, 0);	   
 	   	   blue.transform.position = new Vector3(blue.transform.position.x + distanceAmount/2, 0, 0);
 	   }
-    }
-	
+*/
+    }	
 }
