@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour {
 	public float rotationAmount = 0.5f;
-	public float distanceAmount = 0.5f;
-	[SerializeField] float maxDistance = 4f;
-	[SerializeField] float minDistance = 1f;
 	[SerializeField] GameObject red;
 	[SerializeField] GameObject blue; 
-   
+	
+	//<-------Distance change variables-------->
+	//public float distanceAmount = 0.5f;
+	//[SerializeField] float maxDistance = 4f;
+	//[SerializeField] float minDistance = 1f;
+
     void Update()
     {
        if(Input.GetButton("TurnLeft")){

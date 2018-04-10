@@ -38,6 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4486670207807044}
+  - component: {fileID: 114442253652673812}
   m_Layer: 10
   m_Name: SkyscraperMiddle
   m_TagString: Untagged
@@ -66,7 +67,7 @@ Transform:
   m_GameObject: {fileID: 1275516734456620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 2.5, y: 4, z: 2.5}
   m_Children:
   - {fileID: 4420642555675534}
   m_Father: {fileID: 0}
@@ -141,3 +142,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114442253652673812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275516734456620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18294e582c024f4ba08af50d963a9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleFallspeed: 0.2
