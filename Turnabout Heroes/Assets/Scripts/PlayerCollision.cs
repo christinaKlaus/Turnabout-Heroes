@@ -19,5 +19,6 @@ public class PlayerCollision : MonoBehaviour {
 	void ShowEndscreen(){
 		Time.timeScale = 0;
 		gameOverUI.SetActive(true);
+		GameManager.instance.gameIsRunning = false;
 	}
 }

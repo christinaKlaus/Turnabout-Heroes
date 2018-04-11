@@ -13,15 +13,18 @@ public class PlayerController : MonoBehaviour {
 	//[SerializeField] float maxDistance = 4f;
 	//[SerializeField] float minDistance = 1f;
 
-    void Update()
-    {
-       if(Input.GetButton("TurnLeft")){
-		   transform.Rotate(new Vector3(0, -rotationAmount, 0));
-	   }
+    void Update(){
 
-	   if(Input.GetButton("TurnRight")){
-		   transform.Rotate(new Vector3(0, rotationAmount, 0));
-	   }
+		if(!GameManager.instance.gameIsRunning)
+			return;
+		
+       	if(Input.GetButton("TurnLeft")){
+			transform.Rotate(new Vector3(0, -rotationAmount, 0));
+	   	}
+
+	   	if(Input.GetButton("TurnRight")){
+			transform.Rotate(new Vector3(0, rotationAmount, 0));
+	   	}
 
 /*	   if(Input.GetButton("DistanceIncrease") && red.transform.position.x <= maxDistance/2){
 		   Debug.Log("Distance Decrese");

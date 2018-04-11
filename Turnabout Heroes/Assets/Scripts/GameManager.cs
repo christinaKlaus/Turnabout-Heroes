@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(menuName="GameManager")]
 public class GameManager : ScriptableObject {
 
+	[HideInInspector] public bool gameIsRunning = true;
+	public int currentScore;
+	public int[] highscores;
+	public static UnityEvent timerReset;
 	private static GameManager _instance;
-	[HideInInspector] public int highscore;
+	
 	public static GameManager instance { get {
 			if(!_instance)
 				_instance = CreateInstance<GameManager>();
@@ -14,5 +19,8 @@ public class GameManager : ScriptableObject {
 			return _instance;
 		}
 	}
-
+	
+	void Awake(){
+		GameManager.timerReset = new UnityEvent();
+	}
 }
