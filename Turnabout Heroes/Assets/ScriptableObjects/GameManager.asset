@@ -13,4 +13,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameIsRunning: 1
   currentScore: 0
-  highscores: c800000000000000000000000000000000000000

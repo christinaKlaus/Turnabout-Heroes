@@ -10,7 +10,7 @@ public class Highscores : ScriptableObject {
 	[Serializable]
 	public class PlayerInfo {
 		public string name;
-		public int highscore;
+		public float highscore;
 	}
 
 	public List<PlayerInfo> playerScores;
