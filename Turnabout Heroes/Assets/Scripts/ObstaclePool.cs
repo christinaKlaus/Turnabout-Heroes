@@ -4,6 +4,8 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName="Pools/Obstacle Pool")]
 public class ObstaclePool : ScriptableObject {
+	
+	//Pool mit den Vorlagen für Hindernisse mit der Möglichkeit, einer zufälligen Hindernisgenerierung
 	public GameObject[] pool;
 	int lastIndex;
 	

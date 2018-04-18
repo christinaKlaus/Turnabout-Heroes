@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuControls : MonoBehaviour {
 
+	//händelt Buttons im Hauptmenü
 	[SerializeField] Canvas highscoresCanvas;
 
 	void Start(){

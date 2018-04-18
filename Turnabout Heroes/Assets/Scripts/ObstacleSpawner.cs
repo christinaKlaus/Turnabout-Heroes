@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class ObstacleSpawner : MonoBehaviour {
 
+	//Script für Spawnpunkt der Hindernisse
 	public float obstacleFallSpeed;
 	public float respawnTime;
 	public GameObject testObject;
@@ -22,6 +23,7 @@ public class ObstacleSpawner : MonoBehaviour {
 		//StartCoroutine("Move");
 	}
 
+	// alle x Sekunden wird ein neues zufälliges Hindernis generiert
 	void Update(){
 		timer += Time.deltaTime;
 		if(timer >= respawnTime)

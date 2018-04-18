@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour {
 
+	//Kontrollscript für alle UI Objekte
 	[SerializeField] Text currentScoreText;
 	[SerializeField] GameObject ingameUIScore;
 	[SerializeField] GameObject newHighscoreCanvas;
@@ -14,7 +15,6 @@ public class UIScript : MonoBehaviour {
 	[SerializeField] RectTransform[] scoreFields;
 
 	int newHighscoreIndex;
-	
 	
 	void OnEnable(){
 		ingameUIScore.gameObject.SetActive(false);
@@ -35,6 +35,7 @@ public class UIScript : MonoBehaviour {
 		SceneManager.LoadScene(0);
 	}
 
+	//liest Highscores aus ScriptableObject und trägt sie in angezeigte Liste ein
 	void FillInHighscores(){
 		for(int i = 0; i < scoreFields.Length; i++){
 			scoreFields[i].transform.GetChild(0).GetComponent<Text>().text = highscoreData.playerScores[i].name;
@@ -46,6 +47,7 @@ public class UIScript : MonoBehaviour {
 		currentScoreText.text = string.Format("{0:#0.0} s", GameManager.instance.currentScore);
 	}
 
+	//Überprüfung, ob ein neuer Highscore erzielt wurde
 	void CheckForNewHighscore(){
 		for(int i = 0; i < highscoreData.playerScores.Count; i++){
 			if(highscoreData.playerScores[i].highscore < GameManager.instance.currentScore){
@@ -57,6 +59,7 @@ public class UIScript : MonoBehaviour {
 		}
 	}
 
+	// schreibt neuen Highscore in ScriptableObject, sollte ein Name eingegeben werden
 	public void SetNewHighscore(){
 		highscoreData.playerScores[newHighscoreIndex].highscore = GameManager.instance.currentScore;
 		

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 public class PlayerCollision : MonoBehaviour {
 	
+	// Script, das das Ende des Spiels (Kollision des Spielers mit einem Hindernis) triggert
 	public UnityEvent playerHit;
 	[SerializeField] GameObject gameOverUI;
 
