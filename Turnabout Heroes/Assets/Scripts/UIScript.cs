@@ -28,12 +28,11 @@ public class UIScript : MonoBehaviour {
 		GameManager.instance.currentScore = 0;
 		GameManager.timerReset.Invoke();
 		GameManager.instance.gameIsRunning = true;
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene(1);
 	}
 
-	public void ExitGame(){
-		Debug.Log("Exit");
-		Application.Quit();
+	public void ReturnToMenu(){
+		SceneManager.LoadScene(0);
 	}
 
 	void FillInHighscores(){
@@ -58,10 +57,6 @@ public class UIScript : MonoBehaviour {
 		}
 	}
 
-	public void CloseNewHighscoreCanvas(){
-		newHighscoreCanvas.gameObject.SetActive(false);
-	}
-
 	public void SetNewHighscore(){
 		highscoreData.playerScores[newHighscoreIndex].highscore = GameManager.instance.currentScore;
 		
@@ -69,6 +64,5 @@ public class UIScript : MonoBehaviour {
 			else highscoreData.playerScores[newHighscoreIndex].name = "Player";
 		
 		FillInHighscores();
-		CloseNewHighscoreCanvas();
 	}
 }
