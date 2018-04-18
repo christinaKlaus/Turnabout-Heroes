@@ -7,6 +7,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName="Data Sets/Highscores")]
 public class Highscores : ScriptableObject {
 
+	//Scriptable Object, das zum Speichern der Highscores verwendet wird, welche in Form der inneren Wrapper-Klasse PlayerInfo hinterlegt werden
+
 	[Serializable]
 	public class PlayerInfo {
 		public string name;

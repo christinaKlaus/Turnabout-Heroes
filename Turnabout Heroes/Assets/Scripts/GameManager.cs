@@ -7,6 +7,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName="GameManager")]
 public class GameManager : ScriptableObject {
 
+	//Singleton, der den Spielzustand und aktuellen Score hält
 	[HideInInspector] public bool gameIsRunning = true;
 	public float currentScore;
 	public static UnityEvent timerReset;

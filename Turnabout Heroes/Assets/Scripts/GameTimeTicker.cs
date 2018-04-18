@@ -16,6 +16,7 @@ public class GameTimeTicker : MonoBehaviour {
 		gameTimer = 0;
 	}
 
+	// sorgt für Aktualisierung der Spielzeit und des aktuellen Scores
 	IEnumerator Tick(){
 		while(GameManager.instance.gameIsRunning){
 			gameTimer += Time.deltaTime;
@@ -24,6 +25,7 @@ public class GameTimeTicker : MonoBehaviour {
 		}
 	}
 
+	// aktualisiert den momentanen Score
 	void UpdateScore(){
 		GameManager.instance.currentScore = gameTimer;
 		scoreUIText.text = string.Format("{0:#0.0} s", GameManager.instance.currentScore);
