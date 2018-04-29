@@ -13,12 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScores:
   - name: '#1'
-    highscore: 3
+    highscore: 10
   - name: '#2'
-    highscore: 1
+    highscore: 5
   - name: '#3'
-    highscore: 1
+    highscore: 3.5
   - name: '#4'
-    highscore: 1
+    highscore: 2.5
   - name: '#5'
     highscore: 1

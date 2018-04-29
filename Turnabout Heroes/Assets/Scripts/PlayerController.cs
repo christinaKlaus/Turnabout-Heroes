@@ -11,15 +11,11 @@ public class PlayerController : MonoBehaviour {
 	[SerializeField] GameObject blue;
 
 	[HideInInspector] public ButtonInput.Directions currentDirection;
-	
-	//<-------Distance change variables-------->
-	//public float distanceAmount = 0.5f;
-	//[SerializeField] float maxDistance = 4f;
-	//[SerializeField] float minDistance = 1f;
 
     void Update(){
 
-		//Manipulation der Rotation der Spielfiguren
+		//Manipulation der Rotation der Spielfiguren bei Touch Input
+		
 		if(!GameManager.instance.gameIsRunning)
 			return;
 

@@ -17,6 +17,7 @@ public class UIScript : MonoBehaviour {
 	int newHighscoreIndex;
 	
 	void OnEnable(){
+		Debug.Log(highscoreData.playerScores.Count);
 		ingameUIScore.gameObject.SetActive(false);
 		FillInHighscores();
 		DisplayCurrentScore();
@@ -61,11 +62,21 @@ public class UIScript : MonoBehaviour {
 
 	// schreibt neuen Highscore in ScriptableObject, sollte ein Name eingegeben werden
 	public void SetNewHighscore(){
-		highscoreData.playerScores[newHighscoreIndex].highscore = GameManager.instance.currentScore;
 		
-		if(newHighscorePlayerName.text != "") highscoreData.playerScores[newHighscoreIndex].name = newHighscorePlayerName.text;
-			else highscoreData.playerScores[newHighscoreIndex].name = "Player";
+		for(int i = highscoreData.playerScores.Count-1; i > newHighscoreIndex; i--){
+			Debug.Log("Replacing " + i + ": " + highscoreData.playerScores[i].highscore + " with " + (i-1) + ": " + highscoreData.playerScores[i-1].highscore);
+			highscoreData.playerScores[i] = highscoreData.playerScores[i-1];
+		}
+
+		PlayerInfo info = new PlayerInfo();
+		info.highscore = GameManager.instance.currentScore;
+		//highscoreData.playerScores[newHighscoreIndex].highscore = GameManager.instance.currentScore;
 		
+		if(newHighscorePlayerName.text != "") info.name = newHighscorePlayerName.text; //highscoreData.playerScores[newHighscoreIndex].name = newHighscorePlayerName.text;
+			else info.name = "info"; //highscoreData.playerScores[newHighscoreIndex].name = "Player";
+		
+		highscoreData.playerScores[newHighscoreIndex] = info;
+
 		FillInHighscores();
 	}
 }
