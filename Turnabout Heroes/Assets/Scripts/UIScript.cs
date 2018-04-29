@@ -64,7 +64,6 @@ public class UIScript : MonoBehaviour {
 	public void SetNewHighscore(){
 		
 		for(int i = highscoreData.playerScores.Count-1; i > newHighscoreIndex; i--){
-			Debug.Log("Replacing " + i + ": " + highscoreData.playerScores[i].highscore + " with " + (i-1) + ": " + highscoreData.playerScores[i-1].highscore);
 			highscoreData.playerScores[i] = highscoreData.playerScores[i-1];
 		}
 
