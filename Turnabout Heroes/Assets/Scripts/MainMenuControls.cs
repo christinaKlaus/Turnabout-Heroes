@@ -20,6 +20,7 @@ public class MainMenuControls : MonoBehaviour {
 	}
 
 	public void Exit(){
+		SaveToPlayerPrefs();
 		Application.Quit();
 	}
 
