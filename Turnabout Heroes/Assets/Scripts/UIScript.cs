@@ -17,8 +17,9 @@ public class UIScript : MonoBehaviour {
 	int newHighscoreIndex;
 	
 	void OnEnable(){
-		Debug.Log(highscoreData.playerScores.Count);
 		ingameUIScore.gameObject.SetActive(false);
+		//noch einmal die aktuellen Daten aus den PlayerPrefs holen
+		LoadFromPlayerPrefs();
 		FillInHighscores();
 		DisplayCurrentScore();
 		CheckForNewHighscore();
@@ -33,6 +34,7 @@ public class UIScript : MonoBehaviour {
 	}
 
 	public void ReturnToMenu(){
+		SaveToPlayerPrefs();
 		SceneManager.LoadScene(0);
 	}
 
@@ -76,6 +78,19 @@ public class UIScript : MonoBehaviour {
 		
 		highscoreData.playerScores[newHighscoreIndex] = info;
 
+		//geänderte Daten persistent in den PlayerPrefs speichern
+		SaveToPlayerPrefs();
 		FillInHighscores();
+	}
+
+	//speichert die Highscores persistent in den PlayerPrefs
+	public void SaveToPlayerPrefs(){
+		string json = JsonUtility.ToJson(this);
+		PlayerPrefs.SetString("highscores", json);
+	}
+
+	public void LoadFromPlayerPrefs(){
+		string json = PlayerPrefs.GetString("highscores");
+		JsonUtility.FromJsonOverwrite(json, highscoreData);
 	}
 }
