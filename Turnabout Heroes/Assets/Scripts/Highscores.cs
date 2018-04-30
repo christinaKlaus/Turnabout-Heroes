@@ -11,6 +11,14 @@ public class Highscores : ScriptableObject {
 
 	public List<PlayerInfo> playerScores;
 
+	/*override public string ToString(){
+		string s = "";
+		foreach (PlayerInfo i in playerScores){
+			s += i.name + ": " + i.highscore + "s; ";
+		}
+		return s;
+	}*/
+
 }
 
 [Serializable]
