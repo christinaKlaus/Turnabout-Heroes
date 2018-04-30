@@ -8,26 +8,36 @@ public class PlayerController : MonoBehaviour {
 	//Steuerung der Spielfiguren
 	public float rotationAmount = 0.5f;
 	[SerializeField] GameObject red;
-	[SerializeField] GameObject blue; 
-	
-	//<-------Distance change variables-------->
-	//public float distanceAmount = 0.5f;
-	//[SerializeField] float maxDistance = 4f;
-	//[SerializeField] float minDistance = 1f;
+	[SerializeField] GameObject blue;
+
+	[HideInInspector] public ButtonInput.Directions currentDirection;
 
     void Update(){
 
-		//Manipulation der Rotation der Spielfiguren
+		//Manipulation der Rotation der Spielfiguren bei Touch Input
+		
 		if(!GameManager.instance.gameIsRunning)
 			return;
-		
-       	if(Input.GetButton("TurnLeft")){
-			transform.Rotate(new Vector3(0, -rotationAmount, 0));
-	   	}
 
-	   	if(Input.GetButton("TurnRight")){
-			transform.Rotate(new Vector3(0, rotationAmount, 0));
-	   	}
-    }	
+		switch(currentDirection){
+			case ButtonInput.Directions.Left:
+			TurnLeft();
+			break;
+			case ButtonInput.Directions.Right:
+			TurnRight();
+			break;
+			case ButtonInput.Directions.None:
+			break;
+		}
+      
+    }
+	
+	public void TurnLeft(){
+		transform.Rotate(new Vector3(0, -rotationAmount, 0));
+	}
+
+	public void TurnRight(){
+		transform.Rotate(new Vector3(0, rotationAmount, 0));
+	}
 
 }
