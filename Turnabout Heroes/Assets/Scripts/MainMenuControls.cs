@@ -39,12 +39,16 @@ public class MainMenuControls : MonoBehaviour {
 
 	//speichert die Daten persistent in den PlayerPrefs
 	public void SaveToPlayerPrefs(){
-		string json = JsonUtility.ToJson(this);
+		string json = JsonUtility.ToJson(highscoreData);
+		Debug.Log("Main Menu saved to PlayerPrefs: " + json);
 		PlayerPrefs.SetString("highscores", json);	
 	}
 
 	public void LoadFromPlayerPrefs(){
-		string json = PlayerPrefs.GetString("highscores");
-		JsonUtility.FromJsonOverwrite(json, highscoreData);
+		if(PlayerPrefs.HasKey("highscores")){
+			string json = PlayerPrefs.GetString("highscores");
+			Debug.Log("Main Menu loaded from PlayerPrefs: " + json);
+			JsonUtility.FromJsonOverwrite(json, highscoreData);
+		}
 	}
 }
