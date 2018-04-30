@@ -17,8 +17,8 @@ MonoBehaviour:
   - name: '#2'
     highscore: 5
   - name: '#3'
+    highscore: 4
+  - name: '#3'
     highscore: 3.5
   - name: '#4'
     highscore: 2.5
-  - name: '#5'
-    highscore: 1
